@@ -1,0 +1,39 @@
+﻿div {
+    margin: 10px;
+    border: 2px solid; 
+    border-color: blue;
+    border-radius: 15px;
+    padding: 5px;
+}
+
+h2 {
+    text-decoration: underline;
+    text-align:center;
+}
+
+a {
+    padding: 5px;
+    border-radius: 5px;
+    background-color: fuchsia;
+    text-decoration: none;
+    color: black;
+    border: 2px solid black;
+    margin: 20px;
+}
+
+a:hover {
+    background-color: white;
+}
+
+#szines {
+    background-color: lemonchiffon;
+}
+
+#bold {
+    font-weight: bold;
+}
+
+img {
+    border-radius:5px;
+    border: 7px solid black;
+}

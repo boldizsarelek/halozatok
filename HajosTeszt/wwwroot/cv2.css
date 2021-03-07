@@ -1,0 +1,89 @@
+﻿* {
+    box-sizing:border-box;
+}
+
+body {
+    padding: 10px;
+}
+
+img {
+    border-radius: 5px;
+    border: 7px solid black;
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+}
+
+h1, h2 {
+    text-decoration: underline;
+    font-weight: bold;
+}
+
+h1 {
+    text-align: center;
+}
+
+#footer {
+    text-align: center;
+}
+
+#blue {
+    background-color:cornflowerblue;
+    border: 5px solid black; 
+    height: 30px;
+}
+
+#white {
+    background-color: white;
+    border: 5px solid black;
+    height: 30px;
+}
+
+#bold {
+    font-weight: bold;
+}
+
+#szemelyes {
+    margin: 0px 10px 10px 10px;
+}
+
+@media screen and (min-width: 800px) {
+
+    body {
+        display: flex;
+        max-width: 1500px;
+        margin: auto;
+        flex-direction: column;
+    }
+
+    #masodiksor {
+        display: flex;
+    }
+
+    #kep {
+        flex: 1 1 20%;
+    }
+    #szemelyes {
+        flex: 1 1 80%;
+        padding: 0px;
+    }
+
+    #szamkmai {
+        display:flex;
+    }
+
+    #footer {
+        display: flex;
+        justify-content: space-around;
+    }
+
+    p.footer {
+        width: 30%;
+    }
+}

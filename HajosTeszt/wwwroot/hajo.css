@@ -1,0 +1,133 @@
+﻿* {
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
+}
+
+html, body {
+    height: 100%;
+    background-color: rgb(218,224,230);
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+#külső {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+#kérdés_szöveg {
+    padding: 10px;
+    margin: 10px;
+}
+
+#középső {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+#válaszok {
+    margin: 10px;
+    flex-grow: 1;
+    flex-shrink: 1;
+}
+
+
+#kép {
+    margin: 10px;
+    padding: 10px;
+    flex-grow: 0;
+    flex-shrink: 0;
+}
+
+#vezérlő {
+    margin: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.doboz {
+    background-color: rgb(255,255,255);
+    border: 2px solid rgb(204,204,204);
+    color: black;
+    font-weight: bold;
+}
+
+.gomb {
+    padding: 20px;
+    width: 80px;
+    margin: 10px;
+    background-color: rgb(0,121,211);
+    color: white;
+    font-weight: bold;
+    text-align:center;
+    border-radius: 15px;
+}
+
+    .gomb:hover {
+        background-color: rgb(20,132,215);
+        cursor: pointer;
+    }
+
+.válasz {
+    padding: 10px;
+    margin: 10px;
+    background-color: rgb(246,247,248);
+    color: rgb(0,121,211);
+    border-radius: 20px;
+}
+
+    .válasz:hover {
+        background-color: rgb(227,237,245);
+        cursor: pointer;
+    }
+
+.jó {
+}
+
+.rossz {
+}
+
+@media screen and (min-width: 800px) {
+
+    #középső {
+        flex-direction: row;
+    }
+}
+
+@media (prefers-color-scheme: dark) {
+
+    html, body {
+        background-color: rgb(3,3,3);
+    }
+
+    .doboz {
+        background-color: rgb(26,26,27);
+        border: 2px solid rgb(52,53,54);
+        color: white;
+    }
+
+    .gomb {
+        background-color: rgb(215,218,220);
+        color: black;
+    }
+
+        .gomb:hover {
+            background-color: rgb(200,203,205);
+        }
+
+    .válasz {
+        background-color: rgb(39,39,41);
+        color: rgb(79,188,255);
+    }
+
+        .válasz:hover {
+            background-color: rgb(42,51,58);
+        }
+}

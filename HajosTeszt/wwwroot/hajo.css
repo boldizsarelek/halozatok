@@ -43,6 +43,7 @@ img {
     padding: 10px;
     flex-grow: 0;
     flex-shrink: 0;
+    text-align: center;
 }
 
 #vezérlő {
@@ -86,12 +87,19 @@ img {
     .válasz:hover {
         background-color: rgb(227,237,245);
         cursor: pointer;
+        color: rgb(0,121,211);
     }
 
-.jó {
+.helyes {
+    border: 2px solid #4cc54c;
+    background-color: #4cc54c;
+    color: #ffffffff;
 }
 
-.rossz {
+.helytelen {
+    border: 2px solid #cf6679;
+    background-color: #e94865;
+    color: #ffffffff;
 }
 
 @media screen and (min-width: 800px) {
@@ -110,7 +118,7 @@ img {
     .doboz {
         background-color: rgb(26,26,27);
         border: 2px solid rgb(52,53,54);
-        color: white;
+        color: rgb(215,218,220);
     }
 
     .gomb {
@@ -120,6 +128,7 @@ img {
 
         .gomb:hover {
             background-color: rgb(200,203,205);
+            
         }
 
     .válasz {
@@ -129,5 +138,16 @@ img {
 
         .válasz:hover {
             background-color: rgb(42,51,58);
+            color: rgb(215,218,220);
         }
+
+    .helyes {
+        color: white;
+        background-color: #72b972;
+    }
+
+    .helytelen {
+        color: white;
+        background-color: #cf6679;
+    }
 }

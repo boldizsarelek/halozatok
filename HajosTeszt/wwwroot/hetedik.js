@@ -1,60 +1,75 @@
-﻿var kérdések;
-var aktuálisSorszám = 0;
+﻿var kérdés;
+var aktuálisSorszám = 1;
 
-function letöltés() {
-    fetch('/questions.json')
-        .then(response => response.json())
-        .then(data => letöltésBefejeződött(data));
+function kérdésBetöltés(sorszám) {
+    fetch(`/questions/${sorszám}`)
+        .then(válaszFeldolgozás)
+        .then(letöltésBefejeződött);
+}
+
+function válaszFeldolgozás(válasz) {
+    if (!válasz.ok) {
+        console.error(`Hibás válasz: ${response.status}`)
+    }
+    else {
+        return válasz.json()
+    }
 }
 
 function letöltésBefejeződött(d) {
     console.log('Sikeres letöltés');
-    kérdések = d;
-    kérdésmegjelenítés(aktuálisSorszám);
+    console.log(d);
+    kérdés = d;
+    kérdésMegjelenítés();
 }
 
-function kérdésmegjelenítés(kérdésSorszám) {
+function kérdésMegjelenítés() {
 
     for (var i = 0; i < 3; i++) {
         document.getElementById("válasz" + (i+1)).classList.remove("helyes", "helytelen");
     }
-    var kérdés = document.getElementById('kérdés_szöveg');
+    var kérdésSzöveg = document.getElementById('kérdés_szöveg');
     var válasz1 = document.getElementById('válasz1');
     var válasz2 = document.getElementById('válasz2');
     var válasz3 = document.getElementById('válasz3');
     var kép = document.getElementById('kép1');
 
-    kérdés.innerHTML = kérdések[kérdésSorszám].questionText;
-    válasz1.innerHTML = kérdések[kérdésSorszám].answer1;
-    válasz2.innerHTML = kérdések[kérdésSorszám].answer2;
-    válasz3.innerHTML = kérdések[kérdésSorszám].answer3;
-    kép1.src = "https://szoft1.comeback.hu/hajo/" + kérdések[kérdésSorszám].image;
+    kérdésSzöveg.innerHTML = kérdés.questionText;
+    válasz1.innerHTML = kérdés.answer1;
+    válasz2.innerHTML = kérdés.answer2;
+    válasz3.innerHTML = kérdés.answer3;
+    if (kérdés.image == "") {
+        kép.src = "";
+    }
+    else kép.src = "https://szoft1.comeback.hu/hajo/" + kérdés.image;
 }
 
 function válaszEllenőrzés(válaszSzáma) {
-    if (válaszSzáma == kérdések[aktuálisSorszám].correctAnswer) {
+    if (válaszSzáma == kérdés.correctAnswer) {
         document.getElementById("válasz" + válaszSzáma).classList.add("helyes");
     }
     else document.getElementById("válasz" + válaszSzáma).classList.add("helytelen");
 }
 
 window.onload = function () {
-    letöltés();
+    kérdésBetöltés(aktuálisSorszám);
     
     document.getElementById('előregomb').addEventListener("click", () => {
-        if (aktuálisSorszám < kérdések.length - 1) {
+        /*if (aktuálisSorszám < kérdés.length - 1) {
             aktuálisSorszám++;
         }
-        else aktuálisSorszám = 0;
-        kérdésmegjelenítés(aktuálisSorszám);
+        else aktuálisSorszám = 0;*/
+        aktuálisSorszám++;
+        kérdésBetöltés(aktuálisSorszám);
     })
 
     document.getElementById('visszagomb').addEventListener("click", () => {
-        if (aktuálisSorszám > 0) {
+        /*if (aktuálisSorszám > 0) {
             aktuálisSorszám--;
         }
-        else aktuálisSorszám = kérdések.length - 1;
-        kérdésmegjelenítés(aktuálisSorszám);
+        else aktuálisSorszám = kérdés.length - 1;*/
+        aktuálisSorszám--;
+        kérdésBetöltés(aktuálisSorszám);
     })
 
     document.getElementById('válasz1').addEventListener("click", () => {

@@ -1,0 +1,194 @@
+﻿* {
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
+}
+
+html, body {
+    height: 100%;
+    background-color: rgb(218,224,230);
+}
+
+#parent {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    max-width: 900px;
+    margin: auto;
+}
+
+.box {
+    background-color: rgb(255,255,255);
+    border: 2px solid rgb(204,204,204);
+    color: black;
+    font-weight: bold;
+}
+
+#form {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.button {
+    padding: 20px;
+    width: 80px;
+    margin: 10px;
+    color: white;
+    font-weight: bold;
+    text-align: center;
+    border-radius: 15px;
+    border: unset;
+}
+
+    .button:hover {
+        cursor: pointer;
+    }
+
+/*elemek hozzáadása*/
+#adding {
+    padding: 10px;
+    margin: 10px;
+    display: flex;
+    flex-direction:row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+    #proverbText {
+        padding: 10px;
+        margin: 10px;
+        height: 35px;
+        flex-grow: 1;
+        vertical-align: middle;
+        background-color: rgb(246,247,248);
+        border: 1px solid rgb(237,239,241);
+        color: rgb(135,138,140);
+    }
+
+    #proverbText:hover, #proverbText:focus {
+        border: 1px solid rgb(0,121,211);
+        background-color: rgb(255,255,255);
+    }
+
+    #addButton {
+        padding: 10px;
+        margin: 5px;
+        background-color: #4cc54c;
+        color: white;
+    }
+
+/*elemek listázása*/
+#listing {
+    padding: 10px;
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+    align-content: stretch;
+    flex-grow: 1;
+    overflow-y: scroll;
+}
+
+    .proverb {
+        padding: 10px;
+        margin: 10px;
+        background-color: rgb(246,247,248);
+        color: rgb(0,121,211);
+        border-radius: 20px;
+        display: flex;
+        flex-direction: row;
+        align-items: stretch;
+        border: unset;
+    }
+
+        .proverb:hover {
+            background-color: rgb(227,237,245);
+            cursor: pointer;
+            color: rgb(0,121,211);
+        }
+
+    .selected {
+        padding: 10px;
+        margin: 10px;
+        background-color: rgb(0,121,211);
+        color: white;
+        border-radius: 20px;
+        display: flex;
+        flex-direction: row;
+        align-items: stretch;
+        border: unset;
+    }
+
+/*elemek törlése*/
+#deleting {
+    padding: 10px;
+    margin: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+    #actual {
+        flex-direction: row;
+        align-items: stretch;
+        border: unset;
+        flex-grow: 1;
+        background-color: rgb(246,247,248);
+        color: rgb(79,188,255);
+        padding: 10px;
+        margin: 10px;
+        border-radius: 20px;
+    }
+    #deleteButton {
+        background-color: #e94865;
+    }
+
+
+
+@media (prefers-color-scheme: dark) {
+
+    html, body {
+        background-color: rgb(3,3,3);
+    }
+
+    .box {
+        background-color: rgb(26,26,27);
+        border: 2px solid rgb(52,53,54);
+        color: rgb(215,218,220);
+    }
+
+    /*elemek hozzáadása*/
+    #proverbText {
+        background-color: rgb(39,39,41);
+        border: 1px solid rgb(52,53,54);
+        color:white;
+    }
+
+        #proverbText:hover, #proverbText:focus {
+            background-color: rgb(26,26,27);
+            border: 1px solid rgb(215,218,220)
+        }
+
+    #addButton {
+        background-color: #72b972;
+    }
+
+    /*elemek listázása*/
+    .proverb {
+        background-color: rgb(39,39,41);
+        color: rgb(79,188,255);
+    }
+
+        .proverb:hover {
+            background-color: rgb(42,51,58);
+            color: rgb(215,218,220);
+        }
+
+    /*elemek törlése*/
+    #actual {
+        background-color: rgb(39,39,41);
+    }
+    #deleteButton {
+        background-color: #cf6679;
+    }
+}

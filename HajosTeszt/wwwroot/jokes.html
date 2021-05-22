@@ -10,10 +10,6 @@
 
         document.addEventListener("DOMContentLoaded", () => {
             init();
-
-            for (var i = 0; i < jokeCount; i++) {
-                document.getElementById("table").innerHTML += `<tr><td>${jokes[i].jokeText}</td></tr>`;
-            }
         });
 
 
@@ -33,7 +29,12 @@
                 })
                 .then(result => {
                     jokes = result;
-                });
+                })
+                .then( () => {
+                    for (var i = 0; i < jokeCount; i++) {
+                        document.getElementById("jokeList").innerHTML += `<tr><td>${jokes[i].jokeText}</td></tr>`;
+                    }
+                })
 
             //hozzáadás
             document.getElementById("addButton").addEventListener("click", () => {
@@ -62,17 +63,21 @@
 </head>
 <body>
     <form>
-
         <div id="adding">
-            <input id="jokeText" type="text" placeholder="Csak PC vicc" /> 
+            <input id="jokeText" type="text" placeholder="Csak PC vicc" />
             <button id="addButton">Új vicc felvétele</button>
         </div>
-        <div id="jokeList"></div>
-
-        <div>
-            <table id="table">
-                
+        <div id="listing">
+            <table id="jokeList">
             </table>
+        </div>
+        <div id="actual">
+            Aktuális elem
+            <div id="delete" class="button">Törlés</div>
+        </div>
+        <div id="buttons">
+            <div id="back" class="button">Vissza</div>
+            <div id="next" class="button">Előre</div>
         </div>
     </form>
     <script>

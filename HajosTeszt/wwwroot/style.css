@@ -134,7 +134,7 @@ html, body {
         border: unset;
         flex-grow: 1;
         background-color: rgb(246,247,248);
-        color: rgb(79,188,255);
+        color: rgb(0,121,211);
         padding: 10px;
         margin: 10px;
         border-radius: 20px;
@@ -187,6 +187,7 @@ html, body {
     /*elemek törlése*/
     #actual {
         background-color: rgb(39,39,41);
+        color: rgb(79,188,255);
     }
     #deleteButton {
         background-color: #cf6679;
